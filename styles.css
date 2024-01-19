@@ -1,0 +1,133 @@
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #333;
+}
+
+section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin-top: -50px;
+    text-align: center;
+}
+
+img {
+    max-width: 150px; 
+    max-height: 150px; 
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+a {
+    display: block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #6a5acd; 
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+#username-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#username-rectangle {
+    width: 100px;
+    height: 30px;
+    background-color: #6a5acd; 
+    border-radius: 5px;
+    animation: rotate 4s linear infinite;
+    margin-top: 10px;
+}
+
+#username {
+    color: #fff;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+header,
+section {
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+#username-container,
+#username-rectangle {
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
