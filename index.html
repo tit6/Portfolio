@@ -1,34 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
-    <title>un_humain - Présentation</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
+  <title>un_humain — Présentation</title>
 </head>
 <body>
-    <div id="loading-screen">
-        <div class="loading-spinner"></div>
+  <!-- Écran de chargement -->
+  <div id="loading-screen" aria-hidden="true">
+    <div class="loading-spinner" role="status" aria-label="Chargement"></div>
+  </div>
+
+  <!-- En-tête / Hero -->
+  <header class="site-header hidden">
+    <!-- Bouton thème (pris en charge par script.js) -->
+    <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Basculer le thème">🌙 Sombre</button>
+
+    <div class="container hero">
+      <img id="profile-image" src="finale.png" alt="Image de profil" />
+      <h1 id="username-container">
+        <span id="username" class="gradient-text">un_humain</span>
+      </h1>
+      <p class="tagline">Présentation personnelle</p>
+
+      <!-- ... dans le header, remplacez le bloc .cta pour enlever le bouton #toggle-panel -->
+      <div class="cta">
+        <a class="btn btn-primary" href="mailto:titouan.pelou@gmail.com">Me contacter</a>
+      </div>
     </div>
+  </header>
 
-    <header class="hidden">
-        <img id="profile-image" src="finale.png" alt="Image de profil">
-        <h1 id="username-container">
-            <span id="username">un_humain</span>
-        </h1>
-        <p>Présentation personnelle</p>
-    </header>
+  <!-- Contenu principal -->
+  <main class="content container hidden">
+    <!-- ... dans le main, ajoutez cette carte carrée d’annonce dans la grille -->
+    <section class="grid">
+      <article id="alternance" class="card alternance-card" aria-label="Annonce d'alternance">
+        <h2>Alternance 2026 — Cybersécurité</h2>
+        <p>Je suis en recherche d'une alternance en cybersécurité pour septembre 2026 (cycle ingénieur à ESNA).</p>
+      </article>
 
-    <section class="hidden">
+      <!-- cartes existantes -->
+      <article id="about" class="card">
         <h2>À propos de moi</h2>
-        <p>Site de présentation qui permet d'avoir un aperçu de qui je suis. </p>
+        <p>Site de présentation qui permet d'avoir un aperçu de qui je suis.</p>
+      </article>
 
+      <article id="contact" class="card">
         <h2>Contact</h2>
-        <p>Email: titouan.pelou@gmail.com</p>
-        <p><a href="https://github.com/tit6" target="_blank">Github</a></p>
-        <p> <a href="https://tryhackme.com/p/Ledanseur">TryHackMe</a></p>
-        <p> <a href="https://www.root-me.org/loli-604560?lang=fr#fe1967ff9ad0d55586c1c7092aa60817">RootMe</a></p>
+        <p>
+          Email :
+          <a class="link" href="mailto:titouan.pelou@gmail.com">titouan.pelou@gmail.com</a>
+        </p>
+        <div class="actions">
+          <a class="chip" href="https://github.com/tit6" target="_blank" rel="noopener">🐙 Github</a>
+          <a class="chip" href="https://tryhackme.com/p/Ledanseur" target="_blank" rel="noopener">🧩 TryHackMe</a>
+          <a class="chip" href="https://www.root-me.org/loli-604560?lang=fr#fe1967ff9ad0d55586c1c7092aa60817" target="_blank" rel="noopener">🪵 RootMe</a>
+        </div>
+      </article>
     </section>
+  </main>
+
+  <!-- Panneau latéral -->
+  <aside id="side-panel" class="side-panel" role="dialog" aria-modal="true" aria-labelledby="side-title" hidden>
+    <div class="side-header">
+      <h2 id="side-title">Menu</h2>
+      <button class="icon-btn" id="close-panel" type="button" aria-label="Fermer le panneau">✖</button>
+    </div>
+    <nav class="side-content">
+      <a href="#about" class="side-link">À propos</a>
+      <a href="#contact" class="side-link">Contact</a>
+      <a href="https://github.com/tit6" target="_blank" rel="noopener" class="side-link">Github</a>
+    </nav>
+  </aside>
+
+  <!-- Fond pour fermeture -->
+  <div id="backdrop" class="backdrop" hidden></div>
 </body>
 </html>
