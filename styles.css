@@ -147,15 +147,14 @@ a {
 
 #second {
   position: relative;
-  display: inline-block;
-  padding-top: 10px;
+  padding-top: 35px;
 }
 
 #second::before {
   content: "";
   position: absolute;
-  top: -10px;
-  left: 50%;
+  top: 18px;
+  left: 26px;
   transform: translateX(-50%);
   width: 64px;
   height: 4px;
@@ -233,11 +232,15 @@ a {
   color: var(--muted);
 }
 
+/* Breakpoints */
+
 @media (min-width: 800px) {
   .cards > :first-child {
     grid-column: 1 / -1;
   }
+}
 
+@media (min-width: 800px) {
   .cards > :last-child {
     grid-column: 1 / -1;
     justify-self: center;
