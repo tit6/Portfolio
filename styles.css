@@ -97,11 +97,7 @@ a {
 .cards {
   display: grid;
   gap: 28px;
-}
-
-.cards > :last-child {
-  justify-self: center;
-  width: min(100%, 520px);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
 .card {
@@ -147,6 +143,24 @@ a {
 
 .highlight h2 {
   color: var(--accent);
+}
+
+#second {
+  position: relative;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+#second::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
 }
 
 .link {
@@ -219,20 +233,14 @@ a {
   color: var(--muted);
 }
 
-#second{
-  padding-top: 10px;
-}
-
-@media (min-width: 700px) {
-  .cards {
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-  }
-
+@media (min-width: 800px) {
   .cards > :first-child {
-    grid-column: span 2;
+    grid-column: 1 / -1;
   }
 
   .cards > :last-child {
-    grid-column: span 2;
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: min(100%, 520px);
   }
 }
