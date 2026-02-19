@@ -80,9 +80,14 @@ a {
   padding: 0.7rem 1.4rem;
   background: var(--accent);
   color: #0b0f16;
+  border: none;
   border-radius: 8px;
   font-weight: 600;
   transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.hero .btn + .btn {
+  margin-top: 8px;
 }
 
 .btn:hover {
@@ -230,6 +235,71 @@ a {
   display: block;
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+/* Mode clair */
+
+body.light-mode {
+  --background: #ffffff;
+  --background-alt: #f8fafc;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #0f172a;
+  --muted: #475569;
+  --accent: #f97316;
+  --accent-dark: #ea580c;
+  --shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+  background: linear-gradient(180deg, var(--background), var(--background-alt));
+  color: var(--text);
+}
+
+body.light-mode .site-header {
+  border-color: var(--border);
+}
+
+body.light-mode #profile-image {
+  border-color: var(--border);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.15);
+}
+
+body.light-mode .card {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+body.light-mode .news-list li {
+  background: linear-gradient(135deg, #f8fafc, #ffffff);
+  border-color: #e2e8f0;
+}
+
+body.light-mode .news-list li:hover {
+  border-color: #cbd5e1;
+}
+
+body.light-mode .news-list a {
+  color: var(--text);
+}
+
+body.light-mode .chip {
+  background: #f8fafc;
+  border-color: #e2e8f0;
+}
+
+body.light-mode .chip:hover {
+  background: #eef2f7;
+  border-color: #cbd5e1;
+}
+
+body.light-mode .btn {
+  background: #ffffff;
+  color: #0f172a;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .btn:hover {
+  background: #f8fafc;
 }
 
 /* Breakpoints */
